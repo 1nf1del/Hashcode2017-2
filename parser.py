@@ -29,11 +29,11 @@ def parsing(path):
             currentLine = endpoints[c].split(' ')
             idServer = int(currentLine[0])
             latencyServer = int(currentLine[1])
-            if i in globalCacheServers:
-                globalCacheServers[i].endPoint[idE]=({'endpoint':idE, 'latency' : latencyServer})
+            if idServer in globalCacheServers:
+                globalCacheServers[idServer].endPoints[idE]=({'endpoint':idE, 'latency' : latencyServer})
             else:
-                globalCacheServers[i] = o.CacheServer(idServer,X)
-                globalCacheServers[i].endPoint[idE]=({'endpoint':idE, 'latency' : latencyServer})
+                globalCacheServers[idServer] = o.CacheServer(idServer,X)
+                globalCacheServers[idServer].endPoints[idE]=({'endpoint':idE, 'latency' : latencyServer})
             cacheServers.append(idServer)
             c=c+1
         globalEndPoints[idE] = o.EndPoint(idE, cacheServers, latency)
@@ -46,7 +46,7 @@ def parsing(path):
     return (V,E,R,C,X,globalCacheServers,globalEndPoints,globalRequests,vids)
 
 (V,E,R,C,X,s,e,r,v) = parsing(path)
-print(V,E,R,C,X)
-print(r[5])
+#print(V,E,R,C,X)
+#print(r[5])
 
 
