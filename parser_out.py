@@ -1,5 +1,4 @@
 from objects import *
-path="kittens.out"
 
 def parsingOut(CacheServList,path):
     data=open(path,'w')
