@@ -1,7 +1,7 @@
 from objects import *
 path="kittens.out"
 
-def parsing_out(CacheServList,path):
+def parsingOut(CacheServList,path):
     data=open(path,'w')
     N = 0
     for k,cache in CacheServList.items():
