@@ -8,6 +8,9 @@ def parsing(path):
     firstLine = lines[0].split(' ')
     V,E,R,C,X = int(firstLine[0]),int(firstLine[1]),int(firstLine[2]),int(firstLine[3]),int(firstLine[4])
     videos = lines[1].split(' ')
+    vids ={}
+    for i,val in enumerate(videos):
+        vids[i]=o.Video(i,int(val))
     requests = lines[-R:]
     endpoints = lines[2:-R]
     globalCacheServers = {}
@@ -40,9 +43,9 @@ def parsing(path):
         endPoint = int(currentLine[1])
         nbReq = int(currentLine[2])
         globalRequests.append(o.Request(vidId,endPoint,nbReq))
-    return (V,E,R,C,X,globalCacheServers,globalEndPoints,globalRequests)
+    return (V,E,R,C,X,globalCacheServers,globalEndPoints,globalRequests,vids)
 
-(V,E,R,C,X,s,e,r) = parsing(path)
+(V,E,R,C,X,s,e,r,v) = parsing(path)
 print(V,E,R,C,X)
 print(r[5])
 
