@@ -16,9 +16,10 @@ class EndPoint:
 class CacheServer:
     def __init__(self,csId,capacity):
         self.capacity = capacity
+        self.freeSpace = capacity
         self.csId = csId
         self.content = []
-        self.endPoints = []
+        self.endPoints = [] #
         self.isUsed = False
         
     def equality(self,csId):
@@ -26,6 +27,10 @@ class CacheServer:
     
     def isUsed(self):
         return self.isUsed
+    
+    def addContent(self,video):
+        self.content.append(video.vidId)
+        self.freeSpace -= video.size
     
 class Request:
     def __init__(self,vidId,endPoint,nbReq):
