@@ -28,7 +28,7 @@ for e in sortedEndPoints:
             if v[u.vidId].size < s[e.reservedServer].freeSpace:
                 s[e.reservedServer].addContent(v[u.vidId])
 
-parsingOut(s,'kitten.out')
+parsingOut(s,path+".out")
 
 
 
