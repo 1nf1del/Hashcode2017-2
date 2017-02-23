@@ -19,7 +19,7 @@ class CacheServer:
         self.freeSpace = capacity
         self.csId = csId
         self.content = []
-        self.endPoints = [] #
+        self.endPoints = {} #
         self.isUsed = False
         
     def equality(self,csId):
