@@ -10,7 +10,7 @@ class EndPoint:
 
     def assignRequestsToEndPoint(self,reqList):
         for req in reqList:
-            if req.endPoint == self.id:
+            if req.endPoint == self.epId:
                 self.addRequest(req.nbRequest)
     
 class CacheServer:
