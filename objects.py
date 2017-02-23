@@ -29,8 +29,9 @@ class CacheServer:
         return self.isUsed
     
     def addContent(self,video):
-        self.content.append(video.vidId)
-        self.freeSpace -= video.size
+        if not video.vidId in self.content:
+            self.content.append(video.vidId)
+            self.freeSpace -= video.size
     
 class Request:
     def __init__(self,vidId,endPoint,nbReq):
